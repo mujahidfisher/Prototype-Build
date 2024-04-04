@@ -2,9 +2,27 @@
   <div>
     <form @submit.prevent="submitForm">
       <div class="form-group">
-        <input type="text" id="firstName" class="form-control" v-model="firstName" autocomplete="off" placeholder="First name" required @invalid="handleInvalidInput" @input="clearInvalidInput" />
+        <input type="text" id="firstName" class="form-control" v-model="firstName" autocomplete="off"
+          placeholder="First name" required @invalid="handleInvalidInput" @input="clearInvalidInput" />
 
-        <input type="text" id="lastName" class="form-control" v-model="lastName" autocomplete="off" placeholder="Last name" required @invalid="handleInvalidInput" @input="clearInvalidInput" />
+        <input type="text" id="lastName" class="form-control" v-model="lastName" autocomplete="off"
+          placeholder="Last name" required @invalid="handleInvalidInput" @input="clearInvalidInput" />
+
+        <label for="personalityType1">Personality Type 1:</label>
+        <select type="text" id="personalityType1" class="form-control" v-model="personalityType1" @invalid="handleInvalidInput" @input="clearInvalidInput" required>
+          <option value="ENFP">ENFP</option>
+          <option value="ENTJ">ENTJ</option>
+          <option value="ENTP">ENTP</option>
+          <option value="ESFJ">ESFJ</option>
+          <option value="ESTJ">ESTJ</option>
+          <option value="INFP">INFP</option>
+          <option value="INTJ">INTJ</option>
+          <option value="INTP">INTP</option>
+          <option value="ISFJ">ISFJ</option>
+          <option value="ISFP">ISFP</option>
+          <option value="ISTJ">ISTJ</option>
+          <option value="ISTP">ISTP</option>
+        </select>
 
         <button class="btn btn-primary mt-3" type="submit">SUBMIT</button>
       </div>
@@ -19,7 +37,8 @@ export default {
   data() {
     return {
       firstName: '',
-      lastName: ''
+      lastName: '',
+      personalityType1: ''
     };
   },
   computed: {
@@ -32,11 +51,11 @@ export default {
   },
   methods: {
     async submitForm() {
-      if (!this.firstName || !this.lastName) {
+      if (!this.firstName || !this.lastName || !this.personalityType1) {
         // Handle empty fields
         return;
       }
-      await this.$store.dispatch('registerUser', { firstName: this.firstName, lastName: this.lastName });
+      await this.$store.dispatch('registerUser', { firstName: this.firstName, lastName: this.lastName, personalityType1: this.personalityType1 });
     },
     handleInvalidInput(event) {
       event.target.setCustomValidity(event.target.getAttribute('placeholder'));
@@ -47,4 +66,3 @@ export default {
   }
 }
 </script>
-

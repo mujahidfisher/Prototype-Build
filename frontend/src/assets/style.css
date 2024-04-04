@@ -45,6 +45,7 @@ a:focus {
   margin: 9px;
   border: 2px #2a2a2a solid;
   text-align: left;
+  width: 60%;
   box-shadow: 5px 5px 1px #101010;
   transition: 500ms;
 }

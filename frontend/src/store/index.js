@@ -6,6 +6,7 @@ export default createStore({
   state: {
     firstName: "",
     lastName: "",
+    personalityType1: "",
   },
   mutations: {
     setFirstName(state, firstName) {
@@ -14,9 +15,13 @@ export default createStore({
     setLastName(state, lastName) {
       state.lastName = lastName;
     },
+    setPersonalityType1(state, personalityType1) {
+      state.personalityType1 = personalityType1;
+    },
     clearForm(state) {
       state.firstName = "";
       state.lastName = "";
+      state.personalityType1 = "";
     },
   },
   actions: {
