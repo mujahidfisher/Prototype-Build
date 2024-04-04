@@ -20,12 +20,9 @@ export default createStore({
     },
   },
   actions: {
-    async registerUser({ state, commit }) {
+    async registerUser({ state, commit }, userData) {
       try {
-        const response = await axios.post("https://prototype-api-iakc.onrender.com/register", {
-          firstName: state.firstName,
-          lastName: state.lastName,
-        });
+        const response = await axios.post("https://prototype-api-iakc.onrender.com/register", userData);
         if (response.status === 201) {
           commit("clearForm");
           Swal.fire({

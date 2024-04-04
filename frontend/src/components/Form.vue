@@ -14,9 +14,6 @@
   </div>
 </template>
 
-
-<style scoped></style>
-
 <script>
 export default {
   data() {
@@ -35,8 +32,11 @@ export default {
   },
   methods: {
     async submitForm() {
-      await this.$store.dispatch('registerUser');
-      console.log("sent");
+      if (!this.firstName || !this.lastName) {
+        // Handle empty fields
+        return;
+      }
+      await this.$store.dispatch('registerUser', { firstName: this.firstName, lastName: this.lastName });
     },
     handleInvalidInput(event) {
       event.target.setCustomValidity(event.target.getAttribute('placeholder'));
