@@ -13,30 +13,6 @@ const SchemaMain = new mongoose.Schema({
     type: String,
     required: true,
   },
-  personalityType2: {
-    type: String,
-    required: true,
-  },
-  personalityType3: {
-    type: String,
-    required: true,
-  },
-  personalityType4: {
-    type: String,
-    required: true,
-  },
-  enneagram: {
-    type: String,
-    required: true,
-  },
-  mainUserPersona: {
-    type: String,
-    required: true,
-  },
-  secondaryUserPersona: {
-    type: String,
-    required: true,
-  }
 });
 
 const User = mongoose.model("User", SchemaMain);
