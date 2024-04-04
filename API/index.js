@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 4000;
 
 app.use(bodyParser.json());
 app.use(express.static("./static"));
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -25,12 +25,22 @@ app.use((req, res, next) => {
 
 app.post("/register", async (req, res) => {
   try {
-    const { firstName, lastName, personalityType1 } = req.body;
+    const {
+      firstName,
+      lastName,
+      personalityType1,
+      personalityType2,
+      personalityType3,
+      personalityType4,
+    } = req.body;
 
     const newUser = new User({
       firstName: firstName,
       lastName: lastName,
-      personalityType1: personalityType1
+      personalityType1: personalityType1,
+      personalityType2: personalityType2,
+      personalityType3: personalityType3,
+      personalityType4: personalityType4,
     });
 
     await newUser.save();
@@ -43,5 +53,5 @@ app.post("/register", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-  });
+  console.log(`Server is running on port ${PORT}`);
+});
