@@ -10,6 +10,9 @@ export default createStore({
     personalityType2: "",
     personalityType3: "",
     personalityType4: "",
+    enneagram: "",
+    mainUserPersona: "",
+    secondaryUserPersona: ""
   },
   mutations: {
     setFirstName(state, firstName) {
@@ -30,6 +33,16 @@ export default createStore({
     setPersonalityType4(state, personalityType4) {
       state.personalityType4 = personalityType4;
     },
+    setEnneagram(state, enneagram) {
+      state.enneagram = enneagram;
+    },
+    setMainUserPersona(state, mainUserPersona) {
+      state.mainUserPersona = mainUserPersona;
+    },
+    setSecondaryUserPersona(state, secondaryUserPersona) {
+      state.secondaryUserPersona = secondaryUserPersona;
+    },
+
     clearForm(state) {
       state.firstName = "";
       state.lastName = "";
@@ -37,6 +50,9 @@ export default createStore({
       state.personalityType2 = "";
       state.personalityType3 = "";
       state.personalityType4 = "";
+      state.enneagram = "";
+      state.mainUserPersona = "";
+      state.secondaryUserPersona = "";
     },
   },
   actions: {
