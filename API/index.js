@@ -32,6 +32,9 @@ app.post("/register", async (req, res) => {
       personalityType2,
       personalityType3,
       personalityType4,
+      enneagram,
+      mainUserPersona,
+      secondaryUserPersona
     } = req.body;
 
     const newUser = new User({
@@ -41,6 +44,9 @@ app.post("/register", async (req, res) => {
       personalityType2: personalityType2,
       personalityType3: personalityType3,
       personalityType4: personalityType4,
+      enneagram: enneagram,
+      mainUserPersona: mainUserPersona,
+      secondaryUserPersona: secondaryUserPersona
     });
 
     await newUser.save();
