@@ -24,6 +24,54 @@
           <option value="ISTP">ISTP</option>
         </select>
 
+        <label for="personalityType2">Personality Type 2:</label>
+        <select type="text" id="personalityType2" class="form-control" v-model="personalityType2" @invalid="handleInvalidInput" @input="clearInvalidInput" required>
+          <option value="ENFP">ENFP</option>
+          <option value="ENTJ">ENTJ</option>
+          <option value="ENTP">ENTP</option>
+          <option value="ESFJ">ESFJ</option>
+          <option value="ESTJ">ESTJ</option>
+          <option value="INFP">INFP</option>
+          <option value="INTJ">INTJ</option>
+          <option value="INTP">INTP</option>
+          <option value="ISFJ">ISFJ</option>
+          <option value="ISFP">ISFP</option>
+          <option value="ISTJ">ISTJ</option>
+          <option value="ISTP">ISTP</option>
+        </select>
+
+        <label for="personalityType3">Personality Type 3:</label>
+        <select type="text" id="personalityType3" class="form-control" v-model="personalityType3" @invalid="handleInvalidInput" @input="clearInvalidInput" required>
+          <option value="ENFP">ENFP</option>
+          <option value="ENTJ">ENTJ</option>
+          <option value="ENTP">ENTP</option>
+          <option value="ESFJ">ESFJ</option>
+          <option value="ESTJ">ESTJ</option>
+          <option value="INFP">INFP</option>
+          <option value="INTJ">INTJ</option>
+          <option value="INTP">INTP</option>
+          <option value="ISFJ">ISFJ</option>
+          <option value="ISFP">ISFP</option>
+          <option value="ISTJ">ISTJ</option>
+          <option value="ISTP">ISTP</option>
+        </select>
+
+        <label for="personalityType4">Personality Type 4:</label>
+        <select type="text" id="personalityType4" class="form-control" v-model="personalityType4" @invalid="handleInvalidInput" @input="clearInvalidInput" required>
+          <option value="ENFP">ENFP</option>
+          <option value="ENTJ">ENTJ</option>
+          <option value="ENTP">ENTP</option>
+          <option value="ESFJ">ESFJ</option>
+          <option value="ESTJ">ESTJ</option>
+          <option value="INFP">INFP</option>
+          <option value="INTJ">INTJ</option>
+          <option value="INTP">INTP</option>
+          <option value="ISFJ">ISFJ</option>
+          <option value="ISFP">ISFP</option>
+          <option value="ISTJ">ISTJ</option>
+          <option value="ISTP">ISTP</option>
+        </select>
+
         <button class="btn btn-primary mt-3" type="submit">SUBMIT</button>
       </div>
     </form>
@@ -38,7 +86,10 @@ export default {
     return {
       firstName: '',
       lastName: '',
-      personalityType1: ''
+      personalityType1: '',
+      personalityType2: '',
+      personalityType3: '',
+      personalityType4: '',
     };
   },
   computed: {
@@ -51,11 +102,11 @@ export default {
   },
   methods: {
     async submitForm() {
-      if (!this.firstName || !this.lastName || !this.personalityType1) {
+      if (!this.firstName || !this.lastName || !this.personalityType1 || !this.personalityType2 || !this.personalityType3 || !this.personalityType4) {
         // Handle empty fields
         return;
       }
-      await this.$store.dispatch('registerUser', { firstName: this.firstName, lastName: this.lastName, personalityType1: this.personalityType1 });
+      await this.$store.dispatch('registerUser', { firstName: this.firstName, lastName: this.lastName, personalityType1: this.personalityType1, personalityType2: this.personalityType2, personalityType3: this.personalityType3, personalityType4: this.personalityType4 });
     },
     handleInvalidInput(event) {
       event.target.setCustomValidity(event.target.getAttribute('placeholder'));

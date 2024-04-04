@@ -7,6 +7,9 @@ export default createStore({
     firstName: "",
     lastName: "",
     personalityType1: "",
+    personalityType2: "",
+    personalityType3: "",
+    personalityType4: "",
   },
   mutations: {
     setFirstName(state, firstName) {
@@ -18,10 +21,22 @@ export default createStore({
     setPersonalityType1(state, personalityType1) {
       state.personalityType1 = personalityType1;
     },
+    setPersonalityType2(state, personalityType2) {
+      state.personalityType2 = personalityType2;
+    },
+    setPersonalityType3(state, personalityType3) {
+      state.personalityType3 = personalityType3;
+    },
+    setPersonalityType4(state, personalityType4) {
+      state.personalityType4 = personalityType4;
+    },
     clearForm(state) {
       state.firstName = "";
       state.lastName = "";
       state.personalityType1 = "";
+      state.personalityType2 = "";
+      state.personalityType3 = "";
+      state.personalityType4 = "";
     },
   },
   actions: {
