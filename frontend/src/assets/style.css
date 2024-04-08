@@ -8,6 +8,7 @@
   box-sizing: border-box;
   font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
+
 }
 
 #app {
@@ -15,11 +16,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  height: 100vh;
-}
-
-*::-webkit-scrollbar {
-  display: none;
 }
 
 a {
@@ -58,6 +54,7 @@ a:focus {
   margin-left: 80px;
   margin-right: 80px;
   box-shadow: 10px 10px 2px #101010;
+  margin-bottom: 50px;
 }
 
 .btn:hover {
